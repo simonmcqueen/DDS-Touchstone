@@ -135,7 +135,7 @@ public class Receiver {
             m_qos.group_id = m_def.group_id;
             m_qos.receiver_id = m_def.receiver_id;
             m_qos.partition_id = m_def.partition_id;
-            m_qos.qos.history.depth = 1;
+            m_qos.qos.history.depth = 1000;
             m_qos.qos.latency_budget.duration.sec = 0;
             m_qos.qos.latency_budget.duration.nanosec = 0;
             retcode = qos_writer().value().write(m_qos,

@@ -260,7 +260,7 @@ public class Transmitter {
          * and invokes flow control if needed */
         if (m_writer_qos.value.reliability.kind == DDS.ReliabilityQosPolicyKind.RELIABLE_RELIABILITY_QOS) {
               m_writer_qos.value.history.kind = DDS.HistoryQosPolicyKind.KEEP_ALL_HISTORY_QOS;
-              m_writer_qos.value.resource_limits.max_samples = 1;
+              m_writer_qos.value.resource_limits.max_samples = 100;
         }
 
     }

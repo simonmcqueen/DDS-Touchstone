@@ -95,7 +95,7 @@ Receiver::create(const receiverDef& def)
       m_qos.partition_id = m_def.partition_id;
       m_qos.qos.latency_budget.duration.sec = 0;
       m_qos.qos.latency_budget.duration.nanosec = 0;
-      m_qos.qos.history.depth = 1;
+      m_qos.qos.history.depth = 1000;
 
       retcode = qos_writer()->write(m_qos,
                                     0);

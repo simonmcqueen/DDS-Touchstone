@@ -253,7 +253,7 @@ Transmitter::set_qos()
    * and invokes flow control if needed */
   if (m_writer_qos.reliability.kind == DDS::RELIABLE_RELIABILITY_QOS) {
         m_writer_qos.history.kind = DDS::KEEP_ALL_HISTORY_QOS;
-        m_writer_qos.resource_limits.max_samples = 1;
+        m_writer_qos.resource_limits.max_samples = 100;
   }
 
 }

@@ -33,8 +33,8 @@
 #include "metrics.h"
 #include "alive_writer.h"
 
-static char *DDS_TOUCHSTONE_VERSION = "1.3";
-static char *DDS_TOUCHSTONE_DATE = "Feb 5, 2009";
+static char *DDS_TOUCHSTONE_VERSION = "1.3.1";
+static char *DDS_TOUCHSTONE_DATE = "Oct 8, 2013";
 
 static char *DDS_RESULT[] = {
         "DDS_RETCODE_OK","DDS_RETCODE_ERROR","DDS_RETCODE_UNSUPPORTED",
@@ -2535,6 +2535,7 @@ receiver_set_qos (
         rqm.receiver_id = _this->config.receiver_id;
         rqm.partition_id   = _this->config.partition_id;
         set_touchstone_datareader_qos_default(&rqm.qos);
+        rqm.qos.history.depth = 1000;
         retcode = DDSTouchStone_receiverQosDataWriter_write (
                       rqw,
                       &rqm,
